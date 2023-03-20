@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>viewblog</title>
+    <style>
+      #popup-ad {
+  display: none ;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin: 10% auto;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.popup-content input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.popup-content button[type="submit"] {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.popup-content a.close-btn {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  color: black;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+  
+
+
+<!-- Pop-up ad HTML code -->
+<div id="popup-ad">
+  <div class="popup-content">
+    <a href="#" class="close-btn">&times;</a>
+    <h3>Get 10% off your first purchase!</h3>
+    <p>Subscribe to our newsletter and get a coupon code for 10% off your first purchase.</p>
+    <form>
+      <label for="email">Enter your email:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+
+check this website
+
+
+
+<script>
+  
+
+
+
+// Pop-up ad JavaScript code
+window.onload = function() {
+  var popup = document.getElementById("popup-ad");
+  var closeBtn = document.querySelector(".close-btn");
+
+  
+  /*  setTimeout(function() {
+      popup.style.display = "block";
+    }, 2000);
+  */
+  if (localStorage.getItem("popupShown") === "true") {
+    setTimeout(function() {
+      popup.style.display = "block";
+    }, 3000);
+  }
+
+
+  closeBtn.onclick = function() {
+    popup.style.display = "none";
+    localStorage.setItem("popupShown", "true");
+    window.location.href = "https://www.google.com";
+  };
+};
+
+
+</script>
+</body>
+</html>
+
